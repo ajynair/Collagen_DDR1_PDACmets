@@ -314,16 +314,22 @@ DimPlot(livMets, reduction = "umap",group.by = "Cell.clusters", label = F)
 # saveRDS(livMets, file = "results/seuratObj_pdac_LiM.rds")
 
 
+# getting the cell type annotation
+colnames(livMets@meta.data)
+head(livMets@meta.data)
+celltypes <- livMets@meta.data[,c(2,3,4,7,8,9,10,13)]
+head(celltypes)
+# write.csv(celltypes, file = "results/cellAnnotation_pdac_LiM_wliver.csv")
+
 # **************************************** working with saved  data
 livMets <- readRDS(file = "results/seuratObj_pdac_LiM.rds")
 DimPlot(livMets, label = T)
-
-colnames(livMets@meta.data)
 
 DimPlot(livMets, reduction = "umap",group.by = "Cell.types", label = T)
 DimPlot(livMets, reduction = "umap",group.by = "Cell.types.simple", label = T)
 DimPlot(livMets, reduction = "umap",group.by = "Cell.types.simple.M1M2", label = F)
 DimPlot(livMets, reduction = "umap",group.by = "Cell.clusters", label = T)
+DimPlot(livMets, reduction = "umap",group.by = "orig.ident", label = T)
 
 
 #******************************************************#******************************************************
