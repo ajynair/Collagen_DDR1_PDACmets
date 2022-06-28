@@ -1,0 +1,10 @@
+*.doc
+*.docx
+*.txt
+*.xlsx
+*.xls
+*.rds
+*.pdf
+*.h5
+*.gz
+.Rhistory
