@@ -1,5 +1,5 @@
 # 2022 Jan 05 created
-# script analyses the PDAC and Liver-mets datasets from 2021 Lee Pancreatic cancer data
+# script analyses the PDAC Liver-mets dataset from 2021 Lee Pancreatic cancer data
 # https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156405
 
 
