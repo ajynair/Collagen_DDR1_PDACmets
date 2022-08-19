@@ -3,14 +3,13 @@
 # https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156405
 
 
-setwd("D:/pCloud Sync/Columbia/SchwabeLab/Collaborations/KarinLab/DDR1_PDAC/code/Collagen_DDR1_PDACmets/")
+setwd("D:DDR1_PDAC/code/Collagen_DDR1_PDACmets/")
 
 library(Seurat)
 library(ggplot2)
 library(patchwork)
 library(dplyr)
 
-# markers <- unlist(strsplit("ALB, SERPINA1, SOX9, EPCAM, KRT8, TOP2A, MKI67, CD3D, IL7R, NKG7, GNLY, CD14, LYZ, FCGR3A, CD79A, MS4A1, JCHAIN, TSPAN13, GPR183, PECAM1, CDH5, ACTA2, COL1A1",split = ", "))
 
 markerGenes <- c("MYH11","ACTG2","ACTA2", #VSMC
                  "RGS5","RERGL","COLEC11","LRAT", #Hepatic stellate cells
@@ -266,10 +265,6 @@ livMets <- RenameIdents(object = livMets,
                         '6' = "Epithelial-Met",
                         '10' = "Epithelial-Met",
                         '8' = "Epithelial-Met",
-                        # '14' = "Epithelial-Met",
-                        # '15' = "Epithelial-Met",
-                        # '16' = "Epithelial-Met",
-                        # # '19' = "Epithelial-Met",
                         
                         '17' = "Cholangiocytes",
                         '16' = "Hepatocytes",
@@ -283,7 +278,6 @@ livMets <- RenameIdents(object = livMets,
                         '9' = "M1-like",
                         '11' = "M2-like",
                         '23' = "M1-like",
-                        # '22' = "Myeloid",
                         '19' = "DC",
                         
                         '3' = "B",
@@ -297,7 +291,6 @@ livMets <- RenameIdents(object = livMets,
                         '15' = "T_NK",
                         '24' = "T_NK",
                         
-                        # '5' = "NK",
                         '18' = "Cycling")
 
 
@@ -353,7 +346,6 @@ req_subset <- SetIdent(req_subset, value = "Cell.types.simple")
 levels(req_subset@active.ident)
 
 cols <- c("#FF0000FF","#9900CCFF","#00468BFF","#FFCC00FF","#1B1919FF","#CCFF00FF","#FDBF6F","#58593FFF","#42B540FF","#B2df8a","#AD002AFF","#CC99FFFF")
-# cols <- c("#00468BFF", "#ADB6B6FF",   "#0099B4FF", "#1B1919FF", "#ED0000FF",      "#AD002AFF",    "#42B540FF",     "#FF7F00")
 DimPlot(object = req_subset, group.by = "Cell.types.simple", label = T, cols = cols)
 
 # DimPlot(object = req_subset, group.by = "Cell.types.simple", label = T) +   scale_color_ucscgb()  + labs(title = "Human PDAC LiM")
