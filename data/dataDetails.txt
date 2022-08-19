@@ -1,0 +1,10 @@
+The human scRNA-seq data for 5 PDAC primary samples and one liver-metastasis were obtained from Lee et. al Clin Cancer Res 2021 PMID: 34426439. The GEO link is:
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156405
+
+The dataset used are the following:
+GSM4730260 	Fine needle aspiration - P1
+GSM4730261 	Fine needle aspiration - P2
+GSM4730262 	Fine needle aspiration - P3
+GSM4730263 	Fine needle aspiration - P4
+GSM4730264 	Fine needle aspiration - P5
+GSM4730266 	Liver metastasis
