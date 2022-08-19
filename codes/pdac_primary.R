@@ -3,7 +3,7 @@
 # https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156405
 
 
-setwd("D:/pCloud Sync/Columbia/SchwabeLab/Collaborations/KarinLab/DDR1_PDAC/code/Collagen_DDR1_PDACmets")
+setwd("D:DDR1_PDAC/code/Collagen_DDR1_PDACmets")
 
 library(Seurat)
 library(ggplot2)
@@ -72,9 +72,8 @@ seurat.list[sapply(seurat.list, is.null)] <- NULL
 seurat.list
 
 
-# *************************************************************
-# combining all the samples ; mito threshold
-# *************************************************************
+
+# combining all the samples 
 tmp <- names(seurat.list)
 tmp 
 # required samples
@@ -319,8 +318,6 @@ DimPlot(object = data_req, group.by = "ident", label = T)
 levels(data_req@active.ident)
 
 
-# cols <- c("#00468BFF", "#ADB6B6FF",   "#0099B4FF", "#1B1919FF", "#ED0000FF",      "#AD002AFF",    "#42B540FF",     "#FF7F00")
-
 cols <- c("#FF0000FF","#CC33FFFF","#1B1919FF","#FDBF6F","#42B540FF","#AD002AFF")
 DimPlot(object = req_subset, group.by = "Cell.types", label = T, cols = cols)
 
@@ -329,7 +326,6 @@ ggsave(filename = paste0("results/figs/hum_PDACprimary_celltypes_label.pdf"))
 
 DimPlot(object = req_subset, group.by = "Cell.types", label = F, cols = cols) +   NoLegend()  + labs(title = "Human PDAC primary")
 ggsave(filename = paste0("results/figs/hum_PDACprimary_celltypes_nolegend.pdf"))
-# ggsave(filename = paste0("results/figs/hum_PDACprimary_celltypes_legend.eps"))
 
 DimPlot(object = req_subset, group.by = "orig.ident", label = F, shuffle = T) +   scale_color_aaas()  + labs(title = "Human PDAC primary")
 ggsave(filename = paste0("results/figs/hum_PDACprimary_samples.pdf"))
